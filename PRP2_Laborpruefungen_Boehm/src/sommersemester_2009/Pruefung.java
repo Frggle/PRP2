@@ -15,8 +15,8 @@ public class Pruefung {
 	public static void main(String[] args) {
 		// 1
 		System.err.println("Aufgabe1:");
-		List<Character> l1 = Arrays.asList('a','b','c');
-        List<Character> l2 = Arrays.asList('a','b','d');
+		List<Character> l1 = Arrays.asList('a','b','d');
+        List<Character> l2 = Arrays.asList('a','b','c');
         System.err.println("compareCharLists("+l1 + "," + l2 + ") ergibt:");
 		System.err.println(compareCharLists(l1,l2));
 		// 2
@@ -107,26 +107,27 @@ public class Pruefung {
 		
 		int result = 0;
 		for(Entry<Object, Integer> entry : counter.entrySet()) {
-			if (entry.getValue() > 1) {
+			if(entry.getValue() > 1) {
 				result++;
 			}
 		}
-		
 		return result;
 	}
 	
 	static void countLeaves(Set<?> set, Map<Object, Integer> counter) {
-		if (set == null) {
+		if(set == null) {
 			throw new IllegalArgumentException();
 		}
 		
 		for(Object o : set) {
-			if (o instanceof Set) {
+			if(o instanceof Set) {
 				countLeaves((Set<?>) o, counter);
 			} else {
 				counter.put(o, counter.containsKey(o) ? counter.get(o) + 1 : 1);
 			}
+			
 		}
+
 	}
 	
 	/**
