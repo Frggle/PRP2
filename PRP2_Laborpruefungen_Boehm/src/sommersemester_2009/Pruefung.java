@@ -172,5 +172,4 @@ public class Pruefung {
 		}
 		return result;
 	}
-
 }
