@@ -148,7 +148,7 @@ public class Pruefung {
 			temp.add(entry.getValue());
 			result.add(temp);
 		}
-		
+				
 		return result;
 	}
 	
